@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #111110;
+  --color-surface: #1f1d1b;
+  --color-primary: #d4af37;
+  --color-primary-glow: rgba(212, 175, 55, 0.4);
+  --color-text-main: #f3f2f1;
+  --color-text-muted: #a19d98;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased selection:bg-primary selection:text-background;
+    /* Force dark mode background globally */
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-surface/50 backdrop-blur-md border border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+}
