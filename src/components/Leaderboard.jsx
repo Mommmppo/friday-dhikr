@@ -7,7 +7,7 @@ export default function Leaderboard({ leaderboard, currentUserName, inviterName 
 
   return (
     <div className="w-full h-full">
-      <div className="glass-card rounded-3xl overflow-hidden p-6 h-full flex flex-col">
+      <div className="glass-card rounded-3xl p-6 h-full flex flex-col">
         <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-primary">
           <Trophy className="w-5 h-5" />
           لوحة الشرف
@@ -28,10 +28,10 @@ export default function Leaderboard({ leaderboard, currentUserName, inviterName 
                 className={cn(
                   "flex items-center justify-between p-4 rounded-2xl transition-all",
                   isTop3 
-                    ? "bg-gradient-to-r from-primary/20 to-transparent border border-primary/20 shadow-[0_0_15px_rgba(212,175,55,0.05)]" 
-                    : "bg-white/5 border border-white/5",
-                  isCurrentUser && "ring-2 ring-primary bg-primary/10",
-                  isInviter && !isCurrentUser && "ring-1 ring-amber-500 bg-amber-500/10"
+                    ? "bg-gradient-to-r from-primary/20 to-transparent shadow-[0_0_15px_rgba(212,175,55,0.05)]" 
+                    : "bg-white/5",
+                  isCurrentUser ? "ring-2 ring-inset ring-primary bg-primary/10" : 
+                  (isInviter ? "ring-2 ring-inset ring-amber-500 bg-amber-500/10" : "ring-1 ring-inset ring-white/5")
                 )}
               >
                 <div className="flex items-center gap-4">

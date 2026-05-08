@@ -32,7 +32,7 @@ export default function Arena({ personalCount, globalCount, onIncrement }) {
   };
 
   return (
-    <div className="flex flex-col items-center py-6 px-6 w-full max-w-lg mx-auto space-y-12">
+    <div className="flex flex-col items-center w-full max-w-lg mx-auto space-y-12">
       
       {/* Global Counter */}
       <div className="glass-card px-8 py-6 rounded-3xl text-center w-full">
